@@ -13,7 +13,6 @@ func main() {
 	service := micro.NewService(
 		micro.Registry(consul.NewRegistry(registry.Addrs("127.0.0.1:8500"))),
 	)
-
 	service.Init()
 
 	cli := pb.NewHelloWorldService("test-service", service.Client())
@@ -25,6 +24,5 @@ func main() {
 		log.Println(err)
 		return
 	}
-
 	log.Println(res)
 }
