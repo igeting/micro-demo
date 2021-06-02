@@ -21,8 +21,7 @@ func main() {
 		Name: "lulu",
 	})
 	if err != nil {
-		log.Println(err)
-		return
+		log.Fatalln(err)
 	}
 	log.Println(res)
 }

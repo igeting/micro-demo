@@ -30,8 +30,7 @@ func main() {
 	var res map[string]interface{}
 	err := cli.Call(context.TODO(), req, &res)
 	if err != nil {
-		log.Println(err)
-		return
+		log.Fatalln(err)
 	}
 	log.Println(res)
 }

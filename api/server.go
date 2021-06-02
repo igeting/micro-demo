@@ -23,13 +23,16 @@ func main() {
 
 	err := ser.Handle(ser.NewHandler(g))
 	if err != nil {
-		log.Println(err)
-		return
+		log.Fatalln(err)
 	}
 
 	service := micro.NewService(
 		micro.Server(ser),
-		micro.Registry(consul.NewRegistry(registry.Addrs("127.0.0.1:8500"))),
+		micro.Registry(
+			consul.NewRegistry(
+				registry.Addrs("127.0.0.1:8500"),
+			),
+		),
 	)
 
 	service.Init()
