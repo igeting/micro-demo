@@ -8,7 +8,7 @@ message Request {
 }
 
 message Response {
-  string result = 2;
+  string result = 1;
 }
 
 service HelloWorld {
